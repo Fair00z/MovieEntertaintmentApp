@@ -2,8 +2,9 @@ import React, { useContext } from 'react'
 import './menuSlide.css'
 import { stateContext } from './menu'
 
-function SlideMenu(){
-    const [setShow] = useContext(stateContext)
+function SlideMenu(props){
+    const [setShow,setSlideHover] = useContext(stateContext)
+    const {hoverElement} = props;
     function EnterSlide(){
         setShow(true)
     }
@@ -14,22 +15,60 @@ function SlideMenu(){
         <div>
             <div className="menuSlide" onMouseEnter={EnterSlide} onMouseLeave={LeaveSlide} >
                 <div>
-                    <p className=''>Search</p>
+                    <p
+                     className={hoverElement=='search' ? 'menuSlideHover':''}
+                     onMouseEnter={()=>{
+                        setSlideHover('search')
+                     }}
+                     onMouseLeave={()=>{
+                        setSlideHover('')
+                     }}
+                     >Search</p>
                 </div>
                 <div>
-                    <p>Home</p>
+                    <p className={hoverElement=='home' ? 'menuSlideHover':''}
+                    onMouseEnter={()=>{
+                        setSlideHover('home')
+                     }}
+                     onMouseLeave={()=>{
+                        setSlideHover('')
+                     }}>Home</p>
                 </div>
                 <div>
-                    <p>Tv</p>
+                    <p className={hoverElement=='tv' ? 'menuSlideHover':''}
+                    onMouseEnter={()=>{
+                        setSlideHover('tv')
+                     }}
+                     onMouseLeave={()=>{
+                        setSlideHover('')
+                     }}>Tv</p>
                 </div>
                 <div>
-                    <p>Movies</p>
+                    <p className={hoverElement=='movies' ? 'menuSlideHover':''}
+                    onMouseEnter={()=>{
+                        setSlideHover('movies')
+                     }}
+                     onMouseLeave={()=>{
+                        setSlideHover('')
+                     }}>Movies</p>
                 </div>
                 <div>
-                    <p>Sports</p>
+                    <p className={hoverElement=='sports' ? 'menuSlideHover':''}
+                    onMouseEnter={()=>{
+                        setSlideHover('sports')
+                     }}
+                     onMouseLeave={()=>{
+                        setSlideHover('')
+                     }}>Sports</p>
                 </div>
                 <div>
-                    <p>Categories</p>
+                    <p className={hoverElement=='categories' ? 'menuSlideHover':''}
+                    onMouseEnter={()=>{
+                        setSlideHover('categories')
+                     }}
+                     onMouseLeave={()=>{
+                        setSlideHover('')
+                     }}>Categories</p>
                 </div>
             </div>
         </div>
