@@ -2,6 +2,7 @@ import React from 'react'
 import Header from '../../Components/Header/header';
 import Menu from '../../Components/Menu/menu';
 import Banner from '../../Components/banner/banner';
+import RowPost from '../../Components/RowPost/RowPost';
 
 function Home(){
     return(
@@ -9,6 +10,9 @@ function Home(){
             <Header/>
             <Menu/>
             <Banner/>
+            <RowPost/>
+
+
         </div>
     );
 }
