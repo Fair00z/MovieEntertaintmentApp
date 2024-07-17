@@ -1,0 +1,92 @@
+.outerBox{
+    overflow: hidden;
+    width: 100%;
+    height: 400px;
+    display: inline-block;
+    margin-top: 80px;
+}
+.outerBox img{
+    width: 100%;
+}
+.banner-details{
+    position: absolute;
+    left: 120px;
+    top: 180px;
+    width: 450px;
+    color: white;
+    z-index: 1;
+}
+.banner-details h1{
+    color: #fff;
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+.movie-descreption{
+    font-weight: 100;
+    font-size: 17px;
+    text-align: start;
+}
+
+.button-div{
+    width: 100%;
+    text-align: start;
+}
+.play-button{
+    width: 180px;
+    height: 40px;
+    background-color:  rgb(0, 204, 255);
+    border: none;
+    border-radius: 6px;
+    margin-top: 30px;
+    margin-left: 10px;
+    font-weight: 900;
+}
+.play-button:hover{
+    /* background-color:  rgb(0, 162, 255); */
+    background-color: #fff;
+    transition: 0.3s;
+}
+.wish-button:hover{
+    /* background-color:  rgb(0, 162, 255); */
+    background-color: #181717;
+    transition: 0.3s;
+}
+.play-button i{
+    margin-right: 6px;
+}
+.wish-button{
+    width: 50px;
+    height: 40px;
+    color:  rgb(0, 204, 255);
+    background-color: #202020;
+    border: none;
+    border-radius: 6px;
+    margin-top: 30px;
+    margin-left: 10px;
+    font-weight: 900;
+    text-align: center;
+}
+.banner-left-shadow{
+    width: 500px;
+    height: 567px;
+    background: linear-gradient(90deg, #202020, transparent);
+    position: absolute;
+    left: 70px;
+    top: 80px;
+    height: 400px;
+}
+.banner-right-shadow{
+    width: 100%;
+    background: linear-gradient(0, #202020, transparent);
+    position: absolute;
+    right: 0;
+    top: 280px;
+    height: 200px;
+}
+.genres{
+    font-weight: 900;
+    font-size: 18px;
+    color: #fff;
+    text-align: start;
+    margin-top: 20px;
+}
