@@ -1,0 +1,68 @@
+.logIn{
+    width: 80px;
+    height: 35px;
+    background: rgb(0, 204, 255);
+    border: 1px solid  rgb(0, 204, 255) ;
+    color:  black;
+    border-radius: 30px;
+    margin-top: 20px;
+}
+.outer-box{
+    width: 330px;
+    height: 400px;
+    position: absolute;
+    top: 160px;
+    left: 480px;
+    border-radius: 15px;
+    background-color: #202020d2;
+}
+.title{
+    color: rgb(0, 204, 255);
+    margin-top: 50px;
+    font-size: 30px;
+}
+.outer-box input{
+    display: block;
+    width: 250px;
+    height: 50px;
+    border-radius: 10px;
+    border: 1px solid rgb(0, 204, 255);
+    background-color: #202020;
+    margin-left: 40px;
+    color: #fff;
+    padding-left: 12px;
+    font-size: 15px;
+    outline: none;
+}
+.username{
+    margin-top: 40px;
+}
+.password{
+    margin-top: 30px;
+}
+.username-placeholder{
+    position: absolute;
+    color:  rgb(0, 204, 255);
+    left: 60px;
+    top: 138px;
+}
+.username-placeholderOn{
+    position: absolute;
+    color:  rgb(0, 204, 255);
+    left: 60px;
+    top: 130px;
+    font-size: 10px;
+}
+.password-placeholder{
+    position: absolute;
+    color:  rgb(0, 204, 255);
+    left: 60px;
+    top: 218px;
+}
+.password-placeholderOn{
+    position: absolute;
+    color:  rgb(0, 204, 255);
+    left: 60px;
+    top: 210px;
+    font-size: 10px;
+}

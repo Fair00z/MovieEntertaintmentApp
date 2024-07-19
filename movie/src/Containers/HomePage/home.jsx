@@ -7,12 +7,10 @@ import RowPost from '../../Components/RowPost/RowPost';
 function Home(){
     return(
         <div>
-            <Header/>
+            <Header login newbie />
             <Menu/>
             <Banner/>
             <RowPost/>
-
-
         </div>
     );
 }

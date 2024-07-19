@@ -31,6 +31,11 @@ nav{
     color:  black;
     border-radius: 30px;
 }
+.logIn:hover{
+    background: rgb(0, 153, 255);
+    transition: 0.3s;
+    color: #fff;
+}
 .logIn i {
     margin-right: 5px;
 }
