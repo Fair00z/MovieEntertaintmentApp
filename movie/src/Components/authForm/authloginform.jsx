@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import './authform.css'
+import './authloginform.css'
 
-function AuthForm(){
+function AuthLoginForm(){
     const[userPlace,setUserPlace]=useState(false)
     const[passPlace,setPassPlace]=useState(false)
     return(
@@ -37,4 +37,4 @@ function AuthForm(){
         </div>
     );
 }
-export default AuthForm;
+export default AuthLoginForm;

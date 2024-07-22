@@ -1,0 +1,103 @@
+.signup-outer-box{
+    width: 330px;
+    height: 500px;
+    position: absolute;
+    top: 120px;
+    left: 480px;
+    border-radius: 15px;
+    background-color: #202020d2;
+}
+.signup-outer-box input{
+    display: block;
+    width: 250px;
+    height: 50px;
+    border-radius: 10px;
+    border: 1px solid rgb(0, 204, 255);
+    background-color: #202020;
+    margin-left: 40px;
+    color: #fff;
+    padding-left: 12px;
+    font-size: 15px;
+    outline: none;
+    margin-bottom: 10px;
+}
+.fname{
+
+}
+.lname{
+
+}
+.signup-username{
+
+}
+.email{
+
+}
+.signup-password{
+    
+}
+.fname-placeholder{
+    position: absolute;
+    color:  rgb(0, 204, 255);
+    left: 60px;
+    top: 115px;
+}
+.fname-placeholderOn{
+    position: absolute;
+    color:  rgb(0, 204, 255);
+    left: 60px;
+    top: 105px;
+    font-size: 10px;
+}
+.lname-placeholder{
+    position: absolute;
+    color:  rgb(0, 204, 255);
+    left: 60px;
+    top: 175px;
+}
+.lname-placeholderOn{
+    position: absolute;
+    color:  rgb(0, 204, 255);
+    left: 60px;
+    top: 165px;
+    font-size: 10px;
+}
+.sign-user-placeholder{
+    position: absolute;
+    color:  rgb(0, 204, 255);
+    left: 60px;
+    top: 235px;
+}
+.sign-user-placeholderOn{
+    position: absolute;
+    color:  rgb(0, 204, 255);
+    left: 60px;
+    top: 225px;
+    font-size: 10px;
+}
+.email-placeholder{
+    position: absolute;
+    color:  rgb(0, 204, 255);
+    left: 60px;
+    top: 295px;
+}
+.email-placeholderOn{
+    position: absolute;
+    color:  rgb(0, 204, 255);
+    left: 60px;
+    top: 285px;
+    font-size: 10px;
+}
+.sign-pass-placeholder{
+    position: absolute;
+    color:  rgb(0, 204, 255);
+    left: 60px;
+    top: 355px;
+}
+.sign-pass-placeholderOn{
+    position: absolute;
+    color:  rgb(0, 204, 255);
+    left: 60px;
+    top: 345px;
+    font-size: 10px;
+}

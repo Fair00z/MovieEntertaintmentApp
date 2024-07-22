@@ -4,6 +4,13 @@
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     box-sizing: border-box;
 }
+html{
+    scroll-behavior: smooth;
+}
+html::-webkit-scrollbar{
+    background-color:  #161414;
+    width: 10px;
+}
 body{
     background: #202020;
 }
