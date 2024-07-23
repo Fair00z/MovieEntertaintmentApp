@@ -7,6 +7,12 @@
     border-radius: 15px;
     background-color: #202020d2;
 }
+.sign-title{
+    color: rgb(0, 204, 255);
+    margin-top: 50px;
+    font-size: 30px;
+    margin-bottom: 15px;
+}
 .signup-outer-box input{
     display: block;
     width: 250px;
