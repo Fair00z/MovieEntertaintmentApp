@@ -23,6 +23,7 @@ nav{
     border: 1px solid  rgb(0, 204, 255) ;
     color:  rgb(0, 204, 255);
     border-radius: 6px;
+    cursor: pointer;
 }
 .logIn{
     width: 80px;
@@ -32,11 +33,12 @@ nav{
     color:  black;
     border-radius: 30px;
     margin: 10px;
+    cursor: pointer;
 }
 .logIn:hover{
-    background: rgb(0, 153, 255);
+    background: #fff;
     transition: 0.3s;
-    color: #fff;
+    color: black;
 }
 .logIn i {
     margin-right: 5px;

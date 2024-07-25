@@ -1,0 +1,10 @@
+.movieImageBox{
+    width: 600px;
+    overflow-y: hidden;
+    border-radius: 10px;
+    margin-left: 130px;
+    margin-top: 130px;
+}
+.movieImageBox img{
+    width: 100%;
+}

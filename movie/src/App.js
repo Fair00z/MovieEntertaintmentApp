@@ -8,6 +8,7 @@ import { useContext, useEffect } from 'react';
 import { AuthContext, FirebaseContext } from './Store/firebaseContext';
 import { onAuthStateChanged } from 'firebase/auth';
 import { Auth } from './Firebase/config';
+import MovieDetails from './Containers/MovieDetails/movieDetails';
 
 function App() {
   const{setUser}=useContext(AuthContext)
@@ -25,6 +26,7 @@ function App() {
           <Route exact path='/' element={<Home/>}></Route>
           <Route exact path='/login' element={<Login/>}></Route>
           <Route exact path='/signup' element={<SignUp/>}></Route>
+          <Route exact path='/movie' element={<MovieDetails/>}></Route>
         </Routes>
       </Router>
     </div>

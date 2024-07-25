@@ -1,10 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import axios from '../../Constants/axios';
 import './RowPost.css'
 import { imageUrl } from "../../Constants/constants";
+import { useNavigate } from "react-router-dom";
+import { MovieDetailContext } from "../../Store/moviedetails";
 
 function RowPost(props){
     const[movie,setMovie]=useState([])
+    const Navigate = useNavigate()
+    const {setMovieId}=useContext(MovieDetailContext)
+
     useEffect(()=>{
         axios.get(props.url).then((response)=>{
             setMovie(response.data.results)
@@ -17,7 +22,11 @@ function RowPost(props){
             <div className="poster-box">
                 { movie.map((obj)=>{
                     return (
-                        <img className={props.class} src={imageUrl+obj.backdrop_path} />
+                        <img className={props.class} src={props.poster ? imageUrl+obj.poster_path :imageUrl+obj.backdrop_path } onClick={()=>{
+                            Navigate('/movie')
+                            console.log(obj.id);
+                            setMovieId(obj.id)
+                        }} />
                     );
                 })
                     

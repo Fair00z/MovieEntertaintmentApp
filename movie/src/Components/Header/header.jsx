@@ -14,7 +14,11 @@ function Header(props){
             <p className='logoName'>ReactEntertains</p>
             <div className='buttonDiv'>
                 { newbie ? <button className='signUp' onClick={()=>{
-                    Navigate('/signup')
+                    if(!user){
+                        Navigate('/signup')
+                    }else{
+                        Navigate('/')
+                    }
                 }}>{ user ? user.displayName : "Newbie"}</button>:null}
 
                 { !user ? login ? <button className='logIn' onClick={()=>{
