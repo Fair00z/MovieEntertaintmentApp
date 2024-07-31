@@ -17,7 +17,7 @@ function Header(props){
                     if(!user){
                         Navigate('/signup')
                     }else{
-                        Navigate('/')
+                        Navigate('/wishlist')
                     }
                 }}>{ user ? user.displayName : "Newbie"}</button>:null}
 

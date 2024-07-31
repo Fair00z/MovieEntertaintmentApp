@@ -7,6 +7,9 @@ import { MovieDetailContext } from "../../Store/moviedetails";
 import axios from "axios";
 import { API_KEY } from "../../Constants/constants";
 import { useNavigate, useParams } from "react-router-dom";
+import { AuthContext } from "../../Store/firebaseContext";
+import { db } from "../../Firebase/config";
+import { doc, setDoc } from "firebase/firestore";
 
 
 function MovieDetails(){
@@ -14,6 +17,33 @@ function MovieDetails(){
     const {movieId}=useParams()
     const [movie,setMovie]=useState([])
     const navigate = useNavigate()
+    const{user}=useContext(AuthContext)
+    const user_uid = user.uid
+
+    const handleWishList = ()=>{
+        const today = new Date();
+
+        const year = today.getFullYear();
+        const month = today.getMonth() + 1; // Months are zero-indexed
+        const day = today.getDate();
+
+        const hours = today.getHours();
+        const minutes = today.getMinutes();
+        const seconds = today.getSeconds();
+
+        const currentDate = `${year}-${month}-${day}`;
+        const currentTime = `${hours}:${minutes}:${seconds}`;
+
+        setDoc(doc(db,'wishlist',movieId),{
+            movie_name:movie.original_title,
+            user_id:user_uid,
+            poster_path:movie.poster_path,
+            added_date:currentTime+' '+currentDate
+        })
+
+        console.log(user_uid);
+        console.log(currentDate);
+    }
 
     useEffect(()=>{
         axios.get(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${API_KEY}`).then((response)=>{
@@ -45,7 +75,7 @@ function MovieDetails(){
             </div>
             <div className='details-button-div'>
                 <button className='play-button'><i class="fa-solid fa-play"></i>Watch Now</button>
-                <button className='wish-button'><i class="fa-solid fa-plus"></i></button>
+                <button className='wish-button' onClick={handleWishList} ><i class="fa-solid fa-plus"></i></button>
             </div>
         </div>
     );
