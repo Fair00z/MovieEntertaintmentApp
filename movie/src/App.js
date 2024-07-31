@@ -9,6 +9,7 @@ import { AuthContext, FirebaseContext } from './Store/firebaseContext';
 import { onAuthStateChanged } from 'firebase/auth';
 import { Auth } from './Firebase/config';
 import MovieDetails from './Containers/MovieDetails/movieDetails';
+import MovieList from './Containers/MovieList/MovieList';
 
 function App() {
   const{setUser}=useContext(AuthContext)
@@ -26,7 +27,8 @@ function App() {
           <Route exact path='/' element={<Home/>}></Route>
           <Route exact path='/login' element={<Login/>}></Route>
           <Route exact path='/signup' element={<SignUp/>}></Route>
-          <Route exact path='/movie' element={<MovieDetails/>}></Route>
+          <Route exact path='/movie/:movieId' element={<MovieDetails/>}></Route>
+          <Route exact path='/listmovie' element={<MovieList/>}></Route>
         </Routes>
       </Router>
     </div>

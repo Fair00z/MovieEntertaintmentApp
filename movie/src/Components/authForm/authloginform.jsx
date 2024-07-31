@@ -55,7 +55,7 @@ function AuthLoginForm(){
                 }} 
                 value={userpassword}  />
             </div>
-            <button type="submit" className='logIn'>Login</button>
+            <button type="submit" className='auth-logIn'>Login</button>
            </form>
         </div>
     );

@@ -6,16 +6,22 @@ import Menu from "../../Components/Menu/menu";
 import { MovieDetailContext } from "../../Store/moviedetails";
 import axios from "axios";
 import { API_KEY } from "../../Constants/constants";
+import { useNavigate, useParams } from "react-router-dom";
 
 
 function MovieDetails(){
-    const {movieId} = useContext(MovieDetailContext)
+    // const {movieId} = useContext(MovieDetailContext)
+    const {movieId}=useParams()
     const [movie,setMovie]=useState([])
+    const navigate = useNavigate()
 
     useEffect(()=>{
         axios.get(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${API_KEY}`).then((response)=>{
             setMovie(response.data)
             console.log(response.data);
+        }).catch((error)=>{
+            console.log(error);
+            navigate('/')
         })
     },[movieId])
     return (
@@ -29,7 +35,7 @@ function MovieDetails(){
                     <p className="first_air_date">{movie.release_date}</p>
                     <p className="contry-language">[{movie.origin_country}] [{movie.original_language}]</p>
                 </div>
-                <p className="Adult-Rate">Adult Rated: <span>{movie.adult ? "True":"False"}</span></p>
+                <p className="Adult-Rate">Adult Rated: <span>{movie.adult == true? "True":"False"}</span></p>
                 <p className="movie-overview">{movie.overview}</p>
                 {movie.genres ? movie.genres.map((obj)=>{
                     return (
