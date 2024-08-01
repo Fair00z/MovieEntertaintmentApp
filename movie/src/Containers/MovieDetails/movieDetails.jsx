@@ -40,15 +40,13 @@ function MovieDetails(){
             poster_path:movie.poster_path,
             added_date:currentTime+' '+currentDate
         })
+        navigate('/wishlist')
 
-        console.log(user_uid);
-        console.log(currentDate);
     }
 
     useEffect(()=>{
         axios.get(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${API_KEY}`).then((response)=>{
             setMovie(response.data)
-            console.log(response.data);
         }).catch((error)=>{
             console.log(error);
             navigate('/')

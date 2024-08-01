@@ -68,7 +68,7 @@ function SlideMenu(props){
                      }}
                      onMouseLeave={()=>{
                         setSlideHover('')
-                     }}>Categories</p>
+                     }}>Wish List</p>
                 </div>
             </div>
         </div>

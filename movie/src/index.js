@@ -6,6 +6,7 @@ import Context from './Store/firebaseContext'
 import {FirebaseContext} from './Store/firebaseContext'
 import {app as firebase} from './Firebase/config'
 import MovieContext from './Store/moviedetails';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

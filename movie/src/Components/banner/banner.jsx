@@ -1,13 +1,44 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import './banner.css'
 import axios from '../../Constants/axios';
 import { API_KEY, imageUrl } from '../../Constants/constants';
+import { doc, setDoc } from 'firebase/firestore';
+import { db } from '../../Firebase/config';
+import { AuthContext } from '../../Store/firebaseContext';
+import { useNavigate } from 'react-router-dom';
 
 function Banner(){
     
     const[movie,setMovie]=useState('')
     const[genres,setGenres]=useState([])
     const[refresh,setRefresh]=useState(0)
+    const[movieId,setMovieId]=useState('')
+    const navigate = useNavigate()
+    const{user}=useContext(AuthContext)
+    const user_uid = user.uid
+
+    const handleWishList = ()=>{
+        const today = new Date();
+
+        const year = today.getFullYear();
+        const month = today.getMonth() + 1; // Months are zero-indexed
+        const day = today.getDate();
+
+        const hours = today.getHours();
+        const minutes = today.getMinutes();
+        const seconds = today.getSeconds();
+
+        const currentDate = `${year}-${month}-${day}`;
+        const currentTime = `${hours}:${minutes}:${seconds}`;
+
+        setDoc(doc(db,'wishlist',String(movieId)),{
+            movie_name:movie.original_title,
+            user_id:user_uid,
+            poster_path:movie.poster_path,
+            added_date:currentTime+' '+currentDate
+        })
+        navigate('/wishlist')
+    }
 
     function handleRefresh(){
         setRefresh(refresh+1)
@@ -16,6 +47,8 @@ function Banner(){
     useEffect(()=>{
         axios.get(`trending/all/week?api_key=${API_KEY}&language=en-US`).then((response)=>{
             setMovie(response.data.results[refresh])
+            setMovieId(response.data.results[refresh].id)
+            console.log(response.data.results[refresh])
         })
         
     },[refresh])
@@ -66,7 +99,7 @@ function Banner(){
                 </div>
                 <div className='button-div'>
                     <button className='play-button'><i class="fa-solid fa-play"></i>Watch Now</button>
-                    <button className='wish-button'><i class="fa-solid fa-plus"></i></button>
+                    <button onClick={handleWishList} className='wish-button'><i class="fa-solid fa-plus"></i></button>
                 </div>
             </div>
             <div className='banner-left-shadow'></div>

@@ -61,13 +61,13 @@ function Menu(){
                         }}
                         className={slideHover=='sports'?'menuSlideHover fa-solid fa-volleyball ':'fa-solid fa-volleyball '}></i>
                     </NavLink>
-                    <NavLink className={'NavLink'} to={'/categories'}>
+                    <NavLink className={'NavLink'} to={'/wishlist'}>
                     <i  onMouseEnter={()=>{
                             setHover('categories')
                         }} onMouseLeave={()=>{
                             setHover('')
                         }}
-                        className={slideHover=='categories'?'menuSlideHover fa-solid fa-icons ':'fa-solid fa-icons '}></i>
+                        className={slideHover=='categories'?'menuSlideHover fa-solid fa-plus ':'fa-solid fa-plus '}></i>
                     </NavLink>
                 </div>
                 { show ? <MenuSlide hoverElement={hover} /> : null}

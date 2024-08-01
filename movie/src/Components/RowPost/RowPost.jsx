@@ -13,7 +13,6 @@ function RowPost(props){
     useEffect(()=>{
         axios.get(props.url).then((response)=>{
             setMovie(response.data.results)
-            console.log(response.data.results)
         }).catch((error)=>{
             console.log(error);
         })
@@ -26,7 +25,6 @@ function RowPost(props){
                     return (
                         <img className={props.class} src={props.poster ? imageUrl+obj.poster_path :imageUrl+obj.backdrop_path } onClick={()=>{
                             Navigate(`/movie/${obj.id}`)
-                            console.log(obj.id);
                             setMovieId(obj.id)
                         }} />
                     );

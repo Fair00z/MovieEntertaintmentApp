@@ -21,3 +21,4 @@ export const TVMovie = `discover/movie?api_key=${API_KEY}&with_genres=10770`;
 export const Thriller = `/discover/movie?api_key=${API_KEY}&with_genres=53`;
 export const War = `discover/movie?api_key=${API_KEY}&with_genres=10752`;
 export const Western = `discover/movie?api_key=${API_KEY}&with_genres=37`;
+export const TVpopular = `tv/popular?api_key=${API_KEY}`
